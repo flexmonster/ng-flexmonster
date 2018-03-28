@@ -1,6 +1,6 @@
 {
   "name": "ng-flexmonster",
-  "version": "2.4.17",
+  "version": "2.4.17-3",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -11,6 +11,7 @@
     "e2e": "ng e2e",
     "packagr": "ng-packagr -p ng-package.json"
   },
+  "description": "Angular 4+ Module for Flexmonster Pivot Table & Charts",
   "private": false,
   "dependencies": {
     "@angular/animations": "^5.2.0",

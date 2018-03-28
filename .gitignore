@@ -43,3 +43,4 @@ testem.log
 .DS_Store
 Thumbs.db
 /.ng_pkg_build
+/dist.tgz
