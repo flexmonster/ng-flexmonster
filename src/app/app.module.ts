@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-
+import { FlexmonsterPivotModule } from './modules/flexmonster/flexmonster.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    FlexmonsterPivotModule
   ],
   providers: [],
   bootstrap: [AppComponent]
