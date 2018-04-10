@@ -67,7 +67,7 @@ export module Flexmonster {
         getCell(rowIdx: number, colIdx: number): Cell;
         getColumns(): Hierarchy[];
         getCondition(id: string): ConditionalFormat;
-        getData(options: { slice?: Slice }, callbackHandler: Function | string, updateHandler: Function | string): void;
+        getData(options: { slice?: Slice }, callbackHandler: Function | string, updateHandler?: Function | string): void;
         getFilter(hierarchyName: string): FilterItem[];
         getFilterProperties(hierarchyName: string): FilterProperties;
         getFormat(measureName: string): Format;
@@ -109,7 +109,24 @@ export module Flexmonster {
         showGridAndCharts(type?: string, position?: string, multiple?: boolean): void;
         sortValues(axisName: string, type: string, tuple: number[], measureName: string): void;
         updateData(object: DataSourceParams | Object[]): void;
+        version: number;
         customizeCell(customizeCellFunction: (cell: CellBuilder, data: Cell) => void): void;
+        fusioncharts?: {
+            getData(options: { type: string; slice?: Slice; prepareDataFunction?: Function }, callbackHandler: Function, updateHandler?: Function): void;
+            getNumberFormat(format: Object): Object;
+        };
+        googlecharts?: {
+            getData(options: { type?: string; slice?: Slice; prepareDataFunction?: Function }, callbackHandler: Function, updateHandler?: Function): void;
+            getNumberFormat(format: Object): Object;
+            getNumberFormatPattern(format: Object): string;
+        };
+        highcharts?: {
+            getData(options: { type?: string; slice?: Slice; xAxisType?: string; valuesOnly?: boolean, withDrilldown?: boolean, prepareDataFunction?: Function }, callbackHandler: Function, updateHandler?: Function): void;
+            getAxisFormat(format: Object): string;
+            getPointXFormat(format: Object): string;
+            getPointYFormat(format: Object): string;
+            getPointZFormat(format: Object): string;
+        }
     }
   
     export interface Report {
@@ -184,7 +201,6 @@ export module Flexmonster {
             type?: string
         };
         grid?: {
-            fitGridlines?: boolean,
             showFilter?: boolean,
             showGrandTotals?: string,
             showHeaders?: boolean,
