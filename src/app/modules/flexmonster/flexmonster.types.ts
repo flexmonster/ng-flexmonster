@@ -8,7 +8,7 @@ export module Flexmonster {
         componentFolder?: string;
         report?: Report | string;
         global?: Report;
-        customizeCell?: (cell: CellBuilder, data: Cell) => void;
+        customizeCell?: (cell: Flexmonster.CellBuilder, data: Flexmonster.Cell) => void;
         // events
         cellclick?: Function;
         celldoubleclick?: Function;
@@ -45,7 +45,7 @@ export module Flexmonster {
         // other
         container?: Element | string;
     }
-  
+
     export interface Pivot {
         addCalculatedMeasure(measure: Measure): void;
         addCondition(condition: ConditionalFormat): void;
@@ -67,7 +67,7 @@ export module Flexmonster {
         getCell(rowIdx: number, colIdx: number): Cell;
         getColumns(): Hierarchy[];
         getCondition(id: string): ConditionalFormat;
-        getData(options: { slice?: Slice }, callbackHandler: Function | string, updateHandler: Function | string): void;
+        getData(options: { slice?: Slice }, callbackHandler: Function | string, updateHandler?: Function | string): void;
         getFilter(hierarchyName: string): FilterItem[];
         getFilterProperties(hierarchyName: string): FilterProperties;
         getFormat(measureName: string): Format;
@@ -84,7 +84,7 @@ export module Flexmonster {
         getXMLADataSources(proxyURL: string, callbackHandler: Function | string, username?: string, password?: string): void;
         getXMLAProviderName(proxyURL: string, callbackHandler: Function | string, username?: string, password?: string): string;
         load(url: string, componentFolder?: string): void;
-        on(eventType: string, handler?: Function | string): void;
+        on(eventType: string, handler: Function | string): void;
         off(eventType: string, handler?: Function | string): void;
         open(): void;
         openFieldsList(): void;
@@ -109,9 +109,26 @@ export module Flexmonster {
         showGridAndCharts(type?: string, position?: string, multiple?: boolean): void;
         sortValues(axisName: string, type: string, tuple: number[], measureName: string): void;
         updateData(object: DataSourceParams | Object[]): void;
+        version: number;
         customizeCell(customizeCellFunction: (cell: CellBuilder, data: Cell) => void): void;
+        fusioncharts?: {
+            getData(options: { type: string; slice?: Slice; prepareDataFunction?: Function }, callbackHandler: Function, updateHandler?: Function): void;
+            getNumberFormat(format: Object): Object;
+        };
+        googlecharts?: {
+            getData(options: { type?: string; slice?: Slice; prepareDataFunction?: Function }, callbackHandler: Function, updateHandler?: Function): void;
+            getNumberFormat(format: Object): Object;
+            getNumberFormatPattern(format: Object): string;
+        };
+        highcharts?: {
+            getData(options: { type?: string; slice?: Slice; xAxisType?: string; valuesOnly?: boolean, withDrilldown?: boolean, prepareDataFunction?: Function }, callbackHandler: Function, updateHandler?: Function): void;
+            getAxisFormat(format: Object): string;
+            getPointXFormat(format: Object): string;
+            getPointYFormat(format: Object): string;
+            getPointZFormat(format: Object): string;
+        }
     }
-  
+
     export interface Report {
         dataSource?: DataSourceParams;
         slice?: Slice;
@@ -124,7 +141,7 @@ export module Flexmonster {
         }
         localization?: Object | string;
     }
-  
+
     export interface DataSourceParams {
         browseForFile?: boolean;
         catalog?: string;
@@ -146,7 +163,7 @@ export module Flexmonster {
         username?: string;
         password?: string;
     }
-  
+
     export interface Slice {
         columns?: Hierarchy[];
         measures?: Measure[];
@@ -167,7 +184,7 @@ export module Flexmonster {
             row?: Object
         };
     }
-  
+
     export interface Options {
         chart?: {
             activeMeasure?: string,
@@ -184,7 +201,6 @@ export module Flexmonster {
             type?: string
         };
         grid?: {
-            fitGridlines?: boolean,
             showFilter?: boolean,
             showGrandTotals?: string,
             showHeaders?: boolean,
@@ -212,12 +228,12 @@ export module Flexmonster {
         showAggregationLabels?: boolean;
         useOlapFormatting?: boolean;
     }
-  
+
     export interface PrintOptions {
         header?: string;
         footer?: string;
     }
-  
+
     export interface Member {
         caption?: string;
         uniqueName?: string;
@@ -226,20 +242,20 @@ export module Flexmonster {
         isLeaf?: boolean;
         parentMember?: string;
     }
-  
+
     export interface FilterProperties {
         type?: string;
         members?: FilterItem[];
         quantity?: number;
         measure?: string;
     }
-  
+
     export interface FilterItem {
         caption?: string;
         uniqueName?: string;
         hierarchyName?: string;
     }
-  
+
     export interface Cell {
         columnIndex?: number;
         columns?: any[];
@@ -264,7 +280,7 @@ export module Flexmonster {
         type?: string;
         value?: number;
     }
-  
+
     export interface ExportOptions {
         filename?: string;
         destinationType?: string;
@@ -276,7 +292,7 @@ export module Flexmonster {
         url?: string;
         useOlapFormattingInExcel?: boolean;
     }
-  
+
     export interface Hierarchy {
         caption?: string;
         dimensionName?: string;
@@ -290,7 +306,7 @@ export module Flexmonster {
         sortName?: string;
         uniqueName?: string;
     }
-  
+
     export interface Measure {
         uniqueName?: string;
         active?: boolean;
@@ -301,7 +317,7 @@ export module Flexmonster {
         format?: string;
         grandTotalCaption?: string;
     }
-  
+
     export interface ConditionalFormat {
         formula?: string;
         format?: Style;
@@ -313,7 +329,7 @@ export module Flexmonster {
         member?: string;
         isTotal?: number;
     }
-  
+
     export interface Style {
         color?: string;
         backgroundColor?: string;
@@ -329,7 +345,7 @@ export module Flexmonster {
         height?: number;
         maxHeight?: number;
     }
-  
+
     export interface Format {
         name?: string;
         thousandsSeparator?: string;
@@ -344,21 +360,21 @@ export module Flexmonster {
         divideByZeroValue?: string;
         textAlign?: string;
     }
-  
+
     export interface ColumnSize {
         width?: number;
         idx?: number;
         tuple?: string[];
         measure?: string;
     }
-  
+
     export interface RowSize {
         height?: number;
         idx?: number;
         tuple?: string[];
         measure?: string;
     }
-  
+
     export interface CellBuilder {
         attr?: Object;
         classes?: string[];
@@ -368,5 +384,4 @@ export module Flexmonster {
         addClass(value?: string): void;
         toHtml(): string;
     }
-  
-  }
+}
