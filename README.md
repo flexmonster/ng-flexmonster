@@ -1,27 +1,28 @@
-# NgFlexmonster
+# Flexmonster Angular module for integration of Flexmonster Pivot with Angular 4+ framework
+[![Flexmonster Pivot table component](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](https://flexmonster.com)
+Website: www.flexmonster.com
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This repository holds the TypeScript source code for Flexmonster Angular module. This module serves as an Angular 4+ wrapper for Flexmonster Pivot table component. 
 
-## Development server
+## Prerequisites 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Node.js and npm are essential to Angular development. 
+    
+<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
+Get it now</a> if it's not already installed on your machine.
+ 
+**Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
+by running `node -v` and `npm -v` in a terminal/console window.
+Older versions produce errors.
 
-## Code scaffolding
+We recommend [nvm](https://github.com/creationix/nvm) for managing multiple versions of node and npm.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Then install the [Angular CLI](https://cli.angular.io/) globally:
 
-## Build
+```bash
+npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Follow the steps from our Angular 4+ tutorial
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Follow the steps from our really simple [Angular 4+ tutorial](https://www.flexmonster.com/doc/integration-with-angular-4/).
