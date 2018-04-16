@@ -1,6 +1,6 @@
 {
   "name": "ng-flexmonster",
-  "version": "2.5.0",
+  "version": "2.5.0-1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -10,6 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "packagr": "ng-packagr -p ng-package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flexmonster/ng-flexmonster.git"
   },
   "description": "Angular 4+ Module for Flexmonster Pivot Table & Charts",
   "private": false,
