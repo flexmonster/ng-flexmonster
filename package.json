@@ -15,6 +15,16 @@
     "type": "git",
     "url": "https://github.com/flexmonster/ng-flexmonster.git"
   },
+  "keywords": [
+    "pivot",
+    "html5",
+    "grid",
+    "table",
+    "pivottable",
+    "pivotgrid",
+    "pivotchart",
+    "angular"
+  ],
   "description": "Angular 4+ Module for Flexmonster Pivot Table & Charts",
   "private": false,
   "dependencies": {
