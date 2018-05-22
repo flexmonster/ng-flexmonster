@@ -28,18 +28,6 @@
   "description": "Angular 4+ Module for Flexmonster Pivot Table & Charts",
   "private": false,
   "dependencies": {
-    "@angular/animations": "^5.2.0",
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/forms": "^5.2.0",
-    "@angular/http": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/router": "^5.2.0",
-    "core-js": "^2.5.5",
-    "rxjs": "^5.5.9",
-    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.4",
@@ -62,5 +50,19 @@
     "tsickle": "^0.27.5",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "core-js": "^2.5.5",
+    "rxjs": "^5.5.9",
+    "zone.js": "^0.8.26"
   }
 }
