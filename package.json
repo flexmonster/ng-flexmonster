@@ -1,6 +1,6 @@
 {
   "name": "ng-flexmonster",
-  "version": "2.5.0-2",
+  "version": "2.5.3",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -27,8 +27,7 @@
   ],
   "description": "Angular 4+ Module for Flexmonster Pivot Table & Charts",
   "private": false,
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/cli": "^1.7.4",
     "@angular/compiler-cli": "^5.2.0",
