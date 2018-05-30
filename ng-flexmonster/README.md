@@ -2,12 +2,12 @@
 [![Flexmonster Pivot table component](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](https://flexmonster.com)
 
 
-This repository holds the TypeScript source code for using [Flexmonster Pivot](https://www.flexmonster.com/) in [Angular 4+](https://angular.io/) applications. 
+This repository holds the TypeScript source code for using [Flexmonster Pivot](https://www.flexmonster.com/) in [Angular](https://angular.io/) applications. 
 
 * [Getting started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Integrate Flexmonster into existing/new application](#add-to-app)
-  * [Run simple Angular 4+ and Flexmonster sample from GitHub](#run-github-sample)
+  * [Run simple Angular and Flexmonster sample from GitHub](#run-github-sample)
 * [Usage](#usage)
   * [fm-pivot directive and its attributes](#fm-pivot-directive)
   * [Using API calls and events](#using-flexmonster-api)
@@ -20,7 +20,7 @@ This repository holds the TypeScript source code for using [Flexmonster Pivot](h
 You have the following options to start:
 
 * [Integrate Flexmonster into existing/new application](#add-to-app)
-* [Run simple Angular 4+ and Flexmonster sample from GitHub](#run-github-sample)
+* [Run simple Angular and Flexmonster sample from GitHub](#run-github-sample)
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
@@ -56,13 +56,20 @@ Add Flexmonster Angular module by running in the console:
 npm i ng-flexmonster --save
 ```
 
-Include `flexmonster.js` in the `index.html`. `index.html` was automatically generated in your app and can be found inside `PROJECT-NAME/src` folder.
+Add Flexmonster CSS and JS references to `angular.json`:
 
 ```bash
-<script src="https://cdn.flexmonster.com/flexmonster.js"></script>
+"styles": [ 
+	...,
+	"node_modules/flexmonster/flexmonster.min.css" 
+],
+"scripts": [ 
+  ...,
+  "node_modules/flexmonster/flexmonster.full.js" 
+],
 ```
 
-Include `FlexmonsterPivotModule` into `app.module.ts`. `app.module.ts` can be found inside `PROJECT-NAME/src/app folder`.
+Include `FlexmonsterPivotModule` into `app.module.ts`. `app.module.ts` can be found inside `PROJECT-NAME/src/app` folder.
 
 ```bash
 import { FlexmonsterPivotModule } from 'ng-flexmonster';
@@ -78,7 +85,7 @@ Insert `fm-pivot` directive where you need the pivot table, for example `app.com
 
 ```bash
 <fm-pivot 
-  [componentFolder]="'https://cdn.flexmonster.com/'"
+  [licenseKey]="'XXXX-XXXX-XXXX-XXXX-XXXX'"
   [report]="'https://cdn.flexmonster.com/reports/report.json'">
 </fm-pivot>
 ```
@@ -92,7 +99,7 @@ ng serve
 To see the result open your browser on `http://localhost:4200/`.
 
 
-### <a name="run-github-sample"></a>Run simple Angular 4+ and Flexmonster sample from GitHub ###
+### <a name="run-github-sample"></a>Run simple Angular and Flexmonster sample from GitHub ###
 
 Download `.zip` archive with the sample or [clone it from GitHub](https://github.com/flexmonster/pivot-angular) within the following command:
 
@@ -174,7 +181,7 @@ Here is the [list of all available API methods and events](https://www.flexmonst
 
 Here is [Flexmonster licensing page](https://www.flexmonster.com/pivot-table-editions-and-pricing/). We have free 30 day trial! 
 
-Flexmonster Angular 4+ directive is released as a MIT-licensed (free and open-source) add-on to Flexmonster Pivot.
+Flexmonster Angular directive is released as a MIT-licensed (free and open-source) add-on to Flexmonster Pivot.
 
 ## <a name="support-feedback"></a>Support & feedback ##
 
