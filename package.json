@@ -1,6 +1,6 @@
 {
   "name": "ng-flexmonster",
-  "version": "2.5.3",
+  "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -11,22 +11,7 @@
     "e2e": "ng e2e",
     "packagr": "ng-packagr -p ng-flexmonster/package.json"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/flexmonster/ng-flexmonster.git"
-  },
-  "keywords": [
-    "pivot",
-    "html5",
-    "grid",
-    "table",
-    "pivottable",
-    "pivotgrid",
-    "pivotchart",
-    "angular"
-  ],
-  "description": "Angular 4+ Module for Flexmonster Pivot Table & Charts",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
