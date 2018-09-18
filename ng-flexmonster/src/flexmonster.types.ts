@@ -9,6 +9,7 @@ export module Flexmonster {
         report?: Report | string;
         global?: Report;
         customizeCell?: (cell: Flexmonster.CellBuilder, data: Flexmonster.Cell) => void;
+        customizeContextMenu?: (items: Flexmonster.Item[], data: Flexmonster.Cell | Flexmonster.Chart, viewType: string) => Flexmonster.Item[];
         // events
         cellclick?: Function;
         celldoubleclick?: Function;
@@ -77,7 +78,7 @@ export module Flexmonster {
         getReportFilters(): Hierarchy[];
         getReport(format?: string): Report | string;
         getRows(): Hierarchy[];
-        getSelectedCell(): Cell;
+        getSelectedCell(): Cell | Cell[];
         getSort(hierarchyName: string): string;
         getXMLACatalogs(proxyURL: string, dataSource: string, callbackHandler: Function | string, username?: string, password?: string): void;
         getXMLACubes(proxyURL: string, dataSource: string, catalog: string, callbackHandler: Function | string, username?: string, password?: string): void;
@@ -126,7 +127,9 @@ export module Flexmonster {
             getPointXFormat(format: Object): string;
             getPointYFormat(format: Object): string;
             getPointZFormat(format: Object): string;
-        }
+        };
+        customizeContextMenu(customizeFunction: (items: Flexmonster.Item[], data: Flexmonster.Cell | Flexmonster.Chart, viewType: string) => Flexmonster.Item[]): void;
+        sortingMethod(hierarchyName: string, compareFunction: Function): void
     }
 
     export interface Report {
@@ -183,6 +186,7 @@ export module Flexmonster {
             column?: Object,
             row?: Object
         };
+        drillThrough?: string[];
     }
 
     export interface Options {
@@ -198,7 +202,8 @@ export module Flexmonster {
             showMeasures?: boolean,
             showWarning?: boolean,
             title?: string,
-            type?: string
+            type?: string,
+            showDataLabels?: boolean
         };
         grid?: {
             showFilter?: boolean,
@@ -209,7 +214,10 @@ export module Flexmonster {
             showReportFiltersArea?: boolean,
             showTotals?: boolean,
             title?: string,
-            type?: string
+            type?: string,
+            showAutoCalculationBar?: boolean,
+            dragging?: boolean,
+            grandTotalsPosition: string
         };
         configuratorActive?: boolean;
         configuratorButton?: boolean;
@@ -227,6 +235,8 @@ export module Flexmonster {
         viewType?: string;
         showAggregationLabels?: boolean;
         useOlapFormatting?: boolean;
+        defaultDateType?: string;
+        timePattern?: string;
     }
 
     export interface PrintOptions {
@@ -259,6 +269,7 @@ export module Flexmonster {
     export interface Cell {
         columnIndex?: number;
         columns?: any[];
+        escapedLabel?: string;
         height?: number;
         hierarchy?: Hierarchy;
         isClassicTotalRow?: boolean;
@@ -383,5 +394,21 @@ export module Flexmonster {
         text?: string;
         addClass(value?: string): void;
         toHtml(): string;
+    }
+
+    export interface Item {
+        label?: string;
+        handler?: Function | string;
+        submenu?: Item[];
+        isSelected?: boolean;
+    }
+
+    export interface Chart {
+        columnTuple?: number[];
+        id?: string;
+        label?: string;
+        measure?: Object;
+        rawTuple?: number[];
+        value?: number;
     }
 }
