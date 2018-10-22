@@ -41,8 +41,9 @@ export module Flexmonster {
         runningquery?: Function;
         update?: Function;
         beforetoolbarcreated?: Function;
-        aftergriddraw?: Function;
         beforegriddraw?: Function;
+        aftergriddraw?: Function;
+        afterchartdraw?: Function;
         // other
         container?: Element | string;
     }
@@ -51,6 +52,7 @@ export module Flexmonster {
         addCalculatedMeasure(measure: Measure): void;
         addCondition(condition: ConditionalFormat): void;
         addJSON(json: Object[]): void;
+        alert(options: { title?: string; message?: string; type?: string; buttons?: { label: string; handler?: Function; }[]; blocking?: boolean; }): void;
         clear(): void;
         clearFilter(hierarchyName: string): void;
         clearXMLACache(proxyUrl: string, databaseId: string, callbackHandler: any, cubeId: string, measuresGroupId: string, username?: string, password?: string): void;
@@ -58,13 +60,15 @@ export module Flexmonster {
         collapseAllData(): void;
         collapseData(hierarchyName: string): void;
         connectTo(object: DataSourceParams, callbackHandler: Function | string): void;
+        customizeCell(customizeCellFunction: (cell: CellBuilder, data: Cell) => void): void;
+        customizeContextMenu(customizeFunction: (items: Flexmonster.Item[], data: Flexmonster.Cell | Flexmonster.Chart, viewType: string) => Flexmonster.Item[]): void;
         dispose(): void;
         expandAllData(withAllChildren?: boolean): void;
         expandData(hierarchyName: string): void;
         exportTo(type: string, exportOptions?: ExportOptions, callbackHandler?: Function | string): void;
         getAllConditions(): ConditionalFormat[];
-        getAllMeasures(): Measure[];
         getAllHierarchies(): Hierarchy[];
+        getAllMeasures(): Measure[];
         getCell(rowIdx: number, colIdx: number): Cell;
         getColumns(): Hierarchy[];
         getCondition(id: string): ConditionalFormat;
@@ -93,8 +97,8 @@ export module Flexmonster {
         refresh(): void;
         removeAllCalculatedMeasures(): void;
         removeAllConditions(): void;
-        removeCondition(id: string): void;
         removeCalculatedMeasure(uniqueName: string): void;
+        removeCondition(id: string): void;
         removeSelection(): void;
         runQuery(slice: Slice): void;
         save(filename: string, destination: string, callbackHandler?: Function | string, url?: string, embedData?: boolean): string;
@@ -108,10 +112,10 @@ export module Flexmonster {
         showCharts(type?: string, multiple?: boolean): void;
         showGrid(): void;
         showGridAndCharts(type?: string, position?: string, multiple?: boolean): void;
+        sortingMethod(hierarchyName: string, compareFunction: Function): void;
         sortValues(axisName: string, type: string, tuple: number[], measureName: string): void;
         updateData(object: DataSourceParams | Object[]): void;
         version: number;
-        customizeCell(customizeCellFunction: (cell: CellBuilder, data: Cell) => void): void;
         fusioncharts?: {
             getData(options: { type: string; slice?: Slice; prepareDataFunction?: Function }, callbackHandler: Function, updateHandler?: Function): void;
             getNumberFormat(format: Object): Object;
@@ -128,8 +132,6 @@ export module Flexmonster {
             getPointYFormat(format: Object): string;
             getPointZFormat(format: Object): string;
         };
-        customizeContextMenu(customizeFunction: (items: Flexmonster.Item[], data: Flexmonster.Cell | Flexmonster.Chart, viewType: string) => Flexmonster.Item[]): void;
-        sortingMethod(hierarchyName: string, compareFunction: Function): void
     }
 
     export interface Report {
@@ -141,7 +143,7 @@ export module Flexmonster {
         tableSizes?: {
             columns?: ColumnSize[],
             rows?: RowSize[]
-        }
+        };
         localization?: Object | string;
     }
 
