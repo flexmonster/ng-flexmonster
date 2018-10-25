@@ -14,11 +14,11 @@ export class FlexmonsterPivot {
   @Input() componentFolder: string;
   @Input() report: Flexmonster.Report | string;
   @Input() global: Flexmonster.Report;
-  @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.Cell) => void;
-  @Input() customizeContextMenu: (cell: Flexmonster.Item[], data: Flexmonster.Cell | Flexmonster.Chart, viewType: string) => void;
+  @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
+  @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => void;
   // events
-  @Output() cellclick: EventEmitter<Flexmonster.Cell> = new EventEmitter();
-  @Output() celldoubleclick: EventEmitter<Flexmonster.Cell> = new EventEmitter();
+  @Output() cellclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
+  @Output() celldoubleclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
   @Output() dataerror: EventEmitter<Object> = new EventEmitter();
   @Output() datafilecancelled: EventEmitter<Object> = new EventEmitter();
   @Output() dataloaded: EventEmitter<Object> = new EventEmitter();
@@ -71,8 +71,8 @@ export class FlexmonsterPivot {
       global: this.global,
       customizeCell: this.customizeCell,
       customizeContextMenu: this.customizeContextMenu,
-      cellclick: (cell: Flexmonster.Cell) => this.cellclick.next(cell),
-      celldoubleclick: (cell: Flexmonster.Cell) => this.celldoubleclick.next(cell),
+      cellclick: (cell: Flexmonster.CellData) => this.cellclick.next(cell),
+      celldoubleclick: (cell: Flexmonster.CellData) => this.celldoubleclick.next(cell),
       dataerror: (event: Object) => this.dataerror.next(event),
       datafilecancelled: (event: Object) => this.datafilecancelled.next(event),
       dataloaded: (event: Object) => this.dataloaded.next(event),
