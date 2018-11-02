@@ -88,6 +88,7 @@ export module Flexmonster {
         off(eventType: string, handler?: Function | string): void;
         open(): void;
         openFieldsList(): void;
+        openFilter(hierarchyName: string): void;
         print(options?: PrintOptions): void;
         refresh(): void;
         removeAllCalculatedMeasures(): void;
