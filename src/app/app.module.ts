@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FlexmonsterPivotModule } from './modules/flexmonster/flexmonster.module';
+import { FlexmonsterPivotModule } from '../../dist/ng-flexmonster';
 
 @NgModule({
   declarations: [

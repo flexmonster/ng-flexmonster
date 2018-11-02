@@ -14,10 +14,11 @@ export class FlexmonsterPivot {
   @Input() componentFolder: string;
   @Input() report: Flexmonster.Report | string;
   @Input() global: Flexmonster.Report;
-  @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.Cell) => void;
+  @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
+  @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => void;
   // events
-  @Output() cellclick: EventEmitter<Flexmonster.Cell> = new EventEmitter();
-  @Output() celldoubleclick: EventEmitter<Flexmonster.Cell> = new EventEmitter();
+  @Output() cellclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
+  @Output() celldoubleclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
   @Output() dataerror: EventEmitter<Object> = new EventEmitter();
   @Output() datafilecancelled: EventEmitter<Object> = new EventEmitter();
   @Output() dataloaded: EventEmitter<Object> = new EventEmitter();
@@ -46,8 +47,9 @@ export class FlexmonsterPivot {
   @Output() runningquery: EventEmitter<Object> = new EventEmitter();
   @Output() update: EventEmitter<Object> = new EventEmitter();
   @Output() beforetoolbarcreated: EventEmitter<Object> = new EventEmitter();
-  @Output() aftergriddraw: EventEmitter<Object> = new EventEmitter();
   @Output() beforegriddraw: EventEmitter<Object> = new EventEmitter();
+  @Output() aftergriddraw: EventEmitter<Object> = new EventEmitter();
+  @Output() afterchartdraw: EventEmitter<Object> = new EventEmitter();
   // api
   public flexmonster: Flexmonster.Pivot;
   // private
@@ -68,8 +70,9 @@ export class FlexmonsterPivot {
       report: this.report,
       global: this.global,
       customizeCell: this.customizeCell,
-      cellclick: (cell: Flexmonster.Cell) => this.cellclick.next(cell),
-      celldoubleclick: (cell: Flexmonster.Cell) => this.celldoubleclick.next(cell),
+      customizeContextMenu: this.customizeContextMenu,
+      cellclick: (cell: Flexmonster.CellData) => this.cellclick.next(cell),
+      celldoubleclick: (cell: Flexmonster.CellData) => this.celldoubleclick.next(cell),
       dataerror: (event: Object) => this.dataerror.next(event),
       datafilecancelled: (event: Object) => this.datafilecancelled.next(event),
       dataloaded: (event: Object) => this.dataloaded.next(event),
@@ -98,8 +101,9 @@ export class FlexmonsterPivot {
       runningquery: (event: Object) => this.runningquery.next(event),
       update: (event: Object) => this.update.next(event),
       beforetoolbarcreated: (toolbar: Object) => this.beforetoolbarcreated.next(toolbar),
+      beforegriddraw: (event: Object) => this.beforegriddraw.next(event),
       aftergriddraw: (event: Object) => this.aftergriddraw.next(event),
-      beforegriddraw: (event: Object) => this.beforegriddraw.next(event)
+      afterchartdraw: (event: Object) => this.afterchartdraw.next(event)
     });
   }
 }
