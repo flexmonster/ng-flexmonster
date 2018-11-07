@@ -8,6 +8,7 @@
 
 # dependencies
 /node_modules
+/ng-flexmonster/node_modules
 
 # IDEs and editors
 /.idea
@@ -45,3 +46,4 @@ Thumbs.db
 /.ng_pkg_build
 /dist.tgz
 /package-lock.json
+ng-flexmonster/package-lock.json
