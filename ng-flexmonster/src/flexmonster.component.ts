@@ -25,6 +25,7 @@ export class FlexmonsterPivot {
   @Output() datachanged: EventEmitter<Object> = new EventEmitter();
   @Output() fieldslistclose: EventEmitter<Object> = new EventEmitter();
   @Output() fieldslistopen: EventEmitter<Object> = new EventEmitter();
+  @Output() filterclose: EventEmitter<Object> = new EventEmitter();
   @Output() filteropen: EventEmitter<Object> = new EventEmitter();
   @Output() fullscreen: EventEmitter<Object> = new EventEmitter();
   @Output() loadingdata: EventEmitter<Object> = new EventEmitter();
@@ -79,6 +80,7 @@ export class FlexmonsterPivot {
       datachanged: (event: Object) => this.datachanged.next(event),
       fieldslistclose: (event: Object) => this.fieldslistclose.next(event),
       fieldslistopen: (event: Object) => this.fieldslistopen.next(event),
+      filterclose: (event: Object) => this.filterclose.next(event),
       filteropen: (event: Object) => this.filteropen.next(event),
       fullscreen: (event: Object) => this.fullscreen.next(event),
       loadingdata: (event: Object) => this.loadingdata.next(event),
