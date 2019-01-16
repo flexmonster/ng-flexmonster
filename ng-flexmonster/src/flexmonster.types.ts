@@ -209,6 +209,11 @@ export module Flexmonster {
             title?: string;
             type?: string;
             showDataLabels?: boolean;
+            reversedAxes?: boolean;
+            showAllLabels?: boolean;
+            showOneMeasureSelection?: boolean;
+            position?: string;
+            pieDataIndex?: string;
         };
         grid?: {
             showFilter?: boolean;
@@ -222,10 +227,12 @@ export module Flexmonster {
             type?: string;
             showAutoCalculationBar?: boolean;
             dragging?: boolean;
-            grandTotalsPosition: string;
+            grandTotalsPosition?: string;
+            drillThroughMaxRows?: number;
         };
         configuratorActive?: boolean;
         configuratorButton?: boolean;
+        dateTimezoneOffset?: number;
         datePattern?: string;
         dateTimePattern?: string;
         defaultHierarchySortName?: string;
@@ -242,6 +249,11 @@ export module Flexmonster {
         useOlapFormatting?: boolean;
         defaultDateType?: string;
         timePattern?: string;
+        showOutdatedDataAlert?: boolean;
+        showEmptyData?: boolean; 
+        saveAllFormats?: boolean;
+        showDrillThroughConfigurator?: boolean;
+        grouping?: boolean;
     }
 
     export interface PrintOptions {
