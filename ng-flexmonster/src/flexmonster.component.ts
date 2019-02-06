@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, Output, EventEmitter } from "@angular/core";
-import { Flexmonster } from './flexmonster.types';
+import * as Flexmonster from 'flexmonster';
 
 @Component({
   selector: 'fm-pivot',

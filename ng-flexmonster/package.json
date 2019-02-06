@@ -23,6 +23,7 @@
         "@angular/common": ">=4.0.0"
     },
     "dependencies": {
+        "@types/flexmonster": "^2.6.0",
         "flexmonster": ">=2.5.0"
     },
     "ngPackage": {
@@ -32,6 +33,7 @@
         },
         "dest": "../dist/ng-flexmonster",
         "whitelistedNonPeerDependencies": [
+            "@types/flexmonster",
             "flexmonster"
         ]
     }
