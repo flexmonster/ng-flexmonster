@@ -169,6 +169,8 @@ export module Flexmonster {
         hash?: string;
         username?: string;
         password?: string;
+        requestHeader?: object;
+        subquery?: string;
     }
 
     export interface Slice {
@@ -319,6 +321,7 @@ export module Flexmonster {
         showFilters?: boolean;
         url?: string;
         useOlapFormattingInExcel?: boolean;
+        requestHeader?: object;
     }
 
     export interface Hierarchy {
