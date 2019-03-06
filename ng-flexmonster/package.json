@@ -1,6 +1,6 @@
 {
     "name": "ng-flexmonster",
-    "version": "2.6.13-1",
+    "version": "2.6.15-1",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -23,7 +23,8 @@
         "@angular/common": ">=4.0.0"
     },
     "dependencies": {
-        "flexmonster": ">=2.5.0"
+        "@types/flexmonster": "<2.7.0",
+        "flexmonster": "^2.6.15"
     },
     "ngPackage": {
         "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
@@ -32,6 +33,7 @@
         },
         "dest": "../dist/ng-flexmonster",
         "whitelistedNonPeerDependencies": [
+            "@types/flexmonster",
             "flexmonster"
         ]
     }

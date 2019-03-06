@@ -47,3 +47,4 @@ Thumbs.db
 /dist.tgz
 /package-lock.json
 ng-flexmonster/package-lock.json
+.npmrc
