@@ -23,8 +23,8 @@
         "@angular/common": ">=4.0.0"
     },
     "dependencies": {
-        "@types/flexmonster": "<2.7.0",
-        "flexmonster": "^2.6.15"
+        "@types/flexmonster": "latest",
+        "flexmonster": "latest"
     },
     "ngPackage": {
         "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
