@@ -1,9 +1,9 @@
-import { Component, ElementRef, Input, Output, EventEmitter } from "@angular/core";
+import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import * as Flexmonster from 'flexmonster';
 
 @Component({
   selector: 'fm-pivot',
-  template: "<div><div class='fm-ng-wrapper'></div></div>"
+  template: '<div><div class="fm-ng-wrapper"></div></div>'
 })
 export class FlexmonsterPivot {
   // params
@@ -15,7 +15,8 @@ export class FlexmonsterPivot {
   @Input() report: Flexmonster.Report | string;
   @Input() global: Flexmonster.Report;
   @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
-  @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => void;
+  @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData,
+    viewType: string) => void;
   // events
   @Output() cellclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
   @Output() celldoubleclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
@@ -61,8 +62,8 @@ export class FlexmonsterPivot {
   }
 
   ngOnInit() {
-    this.flexmonster = window["Flexmonster"]({
-      container: this.root.getElementsByClassName("fm-ng-wrapper")[0],
+    this.flexmonster = window['Flexmonster']({
+      container: this.root.getElementsByClassName('fm-ng-wrapper')[0],
       componentFolder: this.componentFolder,
       width: this.width,
       height: this.height,
