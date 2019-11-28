@@ -68,19 +68,19 @@ import { FlexmonsterPivotModule } from 'ng-flexmonster';
 })
 ```
 
-Import CSS styles (e.g. `styles.css`):
+Import CSS styles (e.g. in the `styles.css`):
 ```css
 @import "flexmonster/flexmonster.min.css";
 ```
 
-Import `flexmonster` and `ng-flexmonster` modules in the TypeScript (e.g. `app.component.ts`):
+Import `flexmonster` and `ng-flexmonster` TypeScript modules (e.g. in the `app.component.ts`):
 
 ```typescript
 import * as Flexmonster from 'flexmonster';
 import { FlexmonsterPivot } from 'ng-flexmonster';
 ```
 
-Insert `fm-pivot` directive where you need the pivot table (e.g. `app.component.html`):
+Insert `fm-pivot` directive where you need the pivot table (e.g. in the `app.component.html`):
 
 ```html
 <fm-pivot 
