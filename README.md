@@ -43,20 +43,20 @@ npm install -g @angular/cli
 
 ### <a name="add-to-app"></a>Integrate Flexmonster into existing/new application ###
 
-If you don’t have Angular CLI app, you can create it by running in the console:
+**Step 1.** If you don’t have Angular CLI app, you can create it by running in the console:
 
 ```bash
 ng new PROJECT-NAME
 cd PROJECT-NAME
 ```
 
-Add Flexmonster Angular module by running in the console:
+**Step 2.** Install Flexmonster Angular module by running the NPM command:
 
 ```bash
 npm install ng-flexmonster
 ```
 
-Include `FlexmonsterPivotModule` into `app.module.ts`. `app.module.ts` can be found inside `PROJECT-NAME/src/app` folder.
+**Step 3.** Import `FlexmonsterPivotModule` into `src/app/app.module.ts`:
 
 ```typescript
 import { FlexmonsterPivotModule } from 'ng-flexmonster';
@@ -68,19 +68,19 @@ import { FlexmonsterPivotModule } from 'ng-flexmonster';
 })
 ```
 
-Import CSS styles (e.g. in the `styles.css`):
+**Step 4.** Import CSS styles (e.g. in the `styles.css`):
 ```css
 @import "flexmonster/flexmonster.min.css";
 ```
 
-Import `flexmonster` and `ng-flexmonster` TypeScript modules (e.g. in the `app.component.ts`):
+**Step 5.** Import `flexmonster` and `ng-flexmonster` TypeScript modules (e.g. in the `app.component.ts`):
 
 ```typescript
 import * as Flexmonster from 'flexmonster';
 import { FlexmonsterPivot } from 'ng-flexmonster';
 ```
 
-Insert `fm-pivot` directive where you need the pivot table (e.g. in the `app.component.html`):
+**Step 6.** Insert `fm-pivot` directive where you need the pivot table (e.g. in the `app.component.html`):
 
 ```html
 <fm-pivot 
@@ -89,7 +89,7 @@ Insert `fm-pivot` directive where you need the pivot table (e.g. in the `app.com
 </fm-pivot>
 ```
 
-Run your application from the console:
+**Step 7.** Run your application from the console:
 
 ```bash
 ng serve
