@@ -53,25 +53,12 @@ cd PROJECT-NAME
 Add Flexmonster Angular module by running in the console:
 
 ```bash
-npm i ng-flexmonster --save
-```
-
-Add Flexmonster CSS and JS references to `angular.json`:
-
-```bash
-"styles": [ 
-	...,
-	"node_modules/flexmonster/flexmonster.min.css" 
-],
-"scripts": [ 
-  ...,
-  "node_modules/flexmonster/flexmonster.full.js" 
-],
+npm install ng-flexmonster
 ```
 
 Include `FlexmonsterPivotModule` into `app.module.ts`. `app.module.ts` can be found inside `PROJECT-NAME/src/app` folder.
 
-```bash
+```typescript
 import { FlexmonsterPivotModule } from 'ng-flexmonster';
 
 @NgModule({
@@ -81,9 +68,21 @@ import { FlexmonsterPivotModule } from 'ng-flexmonster';
 })
 ```
 
-Insert `fm-pivot` directive where you need the pivot table, for example `app.component.html`.
+Import CSS styles (e.g. `styles.css`):
+```css
+@import "flexmonster/flexmonster.min.css";
+```
 
-```bash
+Import `flexmonster` and `ng-flexmonster` modules in the TypeScript (e.g. `app.component.ts`):
+
+```typescript
+import * as Flexmonster from 'flexmonster';
+import { FlexmonsterPivot } from 'ng-flexmonster';
+```
+
+Insert `fm-pivot` directive where you need the pivot table (e.g. `app.component.html`):
+
+```html
 <fm-pivot 
   [licenseKey]="'XXXX-XXXX-XXXX-XXXX-XXXX'"
   [report]="'https://cdn.flexmonster.com/reports/report.json'">
