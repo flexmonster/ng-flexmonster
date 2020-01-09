@@ -1,9 +1,9 @@
-import { Component, ElementRef, Input, Output, EventEmitter } from "@angular/core";
+import { Component, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import * as Flexmonster from 'flexmonster';
 
 @Component({
   selector: 'fm-pivot',
-  template: "<div><div class='fm-ng-wrapper'></div></div>"
+  template: '<div><div class="fm-ng-wrapper"></div></div>'
 })
 export class FlexmonsterPivot {
   // params
@@ -15,10 +15,11 @@ export class FlexmonsterPivot {
   @Input() report: Flexmonster.Report | string;
   @Input() global: Flexmonster.Report;
   @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
-  @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => void;
+  @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => Flexmonster.ContextMenuItem[];
   // events
   @Output() cellclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
   @Output() celldoubleclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
+  @Output() chartclick: EventEmitter<Flexmonster.ChartData> = new EventEmitter();
   @Output() dataerror: EventEmitter<Object> = new EventEmitter();
   @Output() datafilecancelled: EventEmitter<Object> = new EventEmitter();
   @Output() dataloaded: EventEmitter<Object> = new EventEmitter();
@@ -61,8 +62,8 @@ export class FlexmonsterPivot {
   }
 
   ngOnInit() {
-    this.flexmonster = window["Flexmonster"]({
-      container: this.root.getElementsByClassName("fm-ng-wrapper")[0],
+    this.flexmonster = window['Flexmonster']({
+      container: this.root.getElementsByClassName('fm-ng-wrapper')[0],
       componentFolder: this.componentFolder,
       width: this.width,
       height: this.height,
@@ -74,38 +75,38 @@ export class FlexmonsterPivot {
       customizeContextMenu: this.customizeContextMenu,
       cellclick: (cell: Flexmonster.CellData) => this.cellclick.next(cell),
       celldoubleclick: (cell: Flexmonster.CellData) => this.celldoubleclick.next(cell),
-      dataerror: (event: Object) => this.dataerror.next(event),
-      datafilecancelled: (event: Object) => this.datafilecancelled.next(event),
-      dataloaded: (event: Object) => this.dataloaded.next(event),
+      chartclick: (event: Flexmonster.ChartData) => this.chartclick.next(event),
       datachanged: (event: Object) => this.datachanged.next(event),
-      fieldslistclose: (event: Object) => this.fieldslistclose.next(event),
-      fieldslistopen: (event: Object) => this.fieldslistopen.next(event),
-      filterclose: (event: Object) => this.filterclose.next(event),
-      filteropen: (event: Object) => this.filteropen.next(event),
-      fullscreen: (event: Object) => this.fullscreen.next(event),
-      loadingdata: (event: Object) => this.loadingdata.next(event),
-      loadinglocalization: (event: Object) => this.loadinglocalization.next(event),
-      loadingolapstructure: (event: Object) => this.loadingolapstructure.next(event),
-      loadingreportfile: (event: Object) => this.loadingreportfile.next(event),
-      localizationerror: (event: Object) => this.localizationerror.next(event),
-      localizationloaded: (event: Object) => this.localizationloaded.next(event),
-      olapstructureerror: (event: Object) => this.olapstructureerror.next(event),
-      olapstructureloaded: (event: Object) => this.olapstructureloaded.next(event),
-      openingreportfile: (event: Object) => this.openingreportfile.next(event),
-      querycomplete: (event: Object) => this.querycomplete.next(event),
-      queryerror: (event: Object) => this.queryerror.next(event),
+      dataerror: (event: Object) => this.dataerror.next(event),
+      datafilecancelled: () => this.datafilecancelled.next(),
+      dataloaded: () => this.dataloaded.next(),
+      fieldslistclose: () => this.fieldslistclose.next(),
+      fieldslistopen: () => this.fieldslistopen.next(),
+      filterclose: () => this.filterclose.next(),
+      filteropen: () => this.filteropen.next(),
+      loadingdata: () => this.loadingdata.next(),
+      loadinglocalization: () => this.loadinglocalization.next(),
+      loadingolapstructure: () => this.loadingolapstructure.next(),
+      loadingreportfile: () => this.loadingreportfile.next(),
+      localizationerror: () => this.localizationerror.next(),
+      localizationloaded: () => this.localizationloaded.next(),
+      olapstructureerror: () => this.olapstructureerror.next(),
+      olapstructureloaded: () => this.olapstructureloaded.next(),
+      openingreportfile: () => this.openingreportfile.next(),
+      querycomplete: () => this.querycomplete.next(),
+      queryerror: () => this.queryerror.next(),
       ready: () => this.ready.next(this.flexmonster),
-      reportchange: (event: Object) => this.reportchange.next(event),
-      reportcomplete: (event: Object) => this.reportcomplete.next(event),
-      reportfilecancelled: (event: Object) => this.reportfilecancelled.next(event),
-      reportfileerror: (event: Object) => this.reportfileerror.next(event),
-      reportfileloaded: (event: Object) => this.reportfileloaded.next(event),
-      runningquery: (event: Object) => this.runningquery.next(event),
-      update: (event: Object) => this.update.next(event),
+      reportchange: () => this.reportchange.next(),
+      reportcomplete: () => this.reportcomplete.next(),
+      reportfileloaded: () => this.reportfileloaded.next(),
+      reportfilecancelled: () => this.reportfilecancelled.next(),
+      reportfileerror: () => this.reportfileerror.next(),
+      runningquery: () => this.runningquery.next(),
+      update: () => this.update.next(),
       beforetoolbarcreated: (toolbar: Object) => this.beforetoolbarcreated.next(toolbar),
       beforegriddraw: (event: Object) => this.beforegriddraw.next(event),
       aftergriddraw: (event: Object) => this.aftergriddraw.next(event),
-      afterchartdraw: (event: Object) => this.afterchartdraw.next(event)
+      afterchartdraw: () => this.afterchartdraw.next()
     });
   }
 }
