@@ -14,6 +14,7 @@ export class FlexmonsterPivot {
   @Input() componentFolder: string;
   @Input() report: Flexmonster.Report | string;
   @Input() global: Flexmonster.Report;
+  @Input() customizeAPIRequest: (request: Object) => Object;
   @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
   @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => Flexmonster.ContextMenuItem[];
   // events
@@ -71,6 +72,7 @@ export class FlexmonsterPivot {
       licenseKey: this.licenseKey,
       report: this.report,
       global: this.global,
+      customizeAPIRequest: this.customizeAPIRequest,
       customizeCell: this.customizeCell,
       customizeContextMenu: this.customizeContextMenu,
       cellclick: (cell: Flexmonster.CellData) => this.cellclick.next(cell),
