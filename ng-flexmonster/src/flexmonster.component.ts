@@ -14,6 +14,7 @@ export class FlexmonsterPivot {
   @Input() componentFolder: string;
   @Input() report: Flexmonster.Report | string;
   @Input() global: Flexmonster.Report;
+  @Input() customizeAPIRequest: (request: Object) => Object;
   @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
   @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => Flexmonster.ContextMenuItem[];
   // events
@@ -28,6 +29,8 @@ export class FlexmonsterPivot {
   @Output() fieldslistopen: EventEmitter<Object> = new EventEmitter();
   @Output() filterclose: EventEmitter<Object> = new EventEmitter();
   @Output() filteropen: EventEmitter<Object> = new EventEmitter();
+  @Output() drillthroughopen: EventEmitter<Flexmonster.CellData | Flexmonster.ChartData> = new EventEmitter();
+  @Output() drillthroughclose: EventEmitter<Object> = new EventEmitter();
   @Output() fullscreen: EventEmitter<Object> = new EventEmitter();
   @Output() loadingdata: EventEmitter<Object> = new EventEmitter();
   @Output() loadinglocalization: EventEmitter<Object> = new EventEmitter();
@@ -71,6 +74,7 @@ export class FlexmonsterPivot {
       licenseKey: this.licenseKey,
       report: this.report,
       global: this.global,
+      customizeAPIRequest: this.customizeAPIRequest,
       customizeCell: this.customizeCell,
       customizeContextMenu: this.customizeContextMenu,
       cellclick: (cell: Flexmonster.CellData) => this.cellclick.next(cell),
@@ -84,6 +88,8 @@ export class FlexmonsterPivot {
       fieldslistopen: () => this.fieldslistopen.next(),
       filterclose: () => this.filterclose.next(),
       filteropen: () => this.filteropen.next(),
+      drillthroughopen: (cell: Flexmonster.CellData | Flexmonster.ChartData) => this.drillthroughopen.next(cell),
+      drillthroughclose: () => this.drillthroughclose.next(),
       loadingdata: () => this.loadingdata.next(),
       loadinglocalization: () => this.loadinglocalization.next(),
       loadingolapstructure: () => this.loadingolapstructure.next(),
