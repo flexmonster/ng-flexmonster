@@ -24,10 +24,7 @@ You have the following options to start:
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
-Node.js and npm are essential to Angular development. 
-    
-<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
-Get it now</a> if it's not already installed on your machine.
+Node.js and npm are essential to Angular development. [Get it now](https://docs.npmjs.com/getting-started/installing-node) if it's not already installed on your machine.
  
 **Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
 by running `node -v` and `npm -v` in a terminal/console window.
@@ -125,17 +122,9 @@ To see the result open your browser on `http://localhost:4200/`.
 
 ### <a name="fm-pivot-directive"></a>fm-pivot directive and its attributes ###
 
-`fm-pivot` directive embeds the component into the HTML page. Every attribute for `fm-pivot` directive is set either as a string value or as an Angular variable. Here is the list of available attributes:
+`fm-pivot` directive embeds the component into the HTML page. Every attribute for `fm-pivot` directive is set either as a string value or as an Angular variable. All attributes are equivalent to those which are passed to the `new Flexmonster()` API call. Check out [the full list of available attributes](https://www.flexmonster.com/api/new-flexmonster/).
 
-* `componentFolder` – URL of the component’s folder which contains all necessary files. Also, it is used as a base URL for report files, localization files, styles and images. The default value for `componentFolder` is `flexmonster/`.
-* `width` – width of the component on the page (pixels or percent). The default value for width is 100%.
-* `height` – height of the component on the page (pixels or percent). The default value for height is `500`.
-* `report` – property to set a report. It can be inline [Report Object](https://www.flexmonster.com/api/report-object/) or URL to report JSON.
-* `toolbar` – parameter to embed the toolbar or not. Default value is `false` – without the toolbar.
-* `customizeCell` – function that allows customizing of separate cells. Have a look at [customizeCell definition and examples](https://www.flexmonster.com/api/customizecell/).
-* `licenseKey` – the license key.
-
-Here is how all these attributes should be specified:
+Here is an example demonstrating how different attributes are specified:
 
 ```bash
 <fm-pivot [componentFolder]="'https://cdn.flexmonster.com/'"
@@ -144,7 +133,7 @@ Here is how all these attributes should be specified:
           [height]="500"
           [licenseKey]="'XXXX-XXXX-XXXX-XXXX-XXXX'"
           [report]="'https://cdn.flexmonster.com/reports/report.json'"
-          (reportcomplete)="onReportComplete($event)">
+          (reportcomplete)="onReportComplete()">
     Flexmonster will appear here
 </fm-pivot>
 ```
