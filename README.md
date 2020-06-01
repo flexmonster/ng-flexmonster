@@ -156,7 +156,7 @@ onReportComplete(): void {
 Also, you need to specify that `onReportComplete` handles `reportcomplete` event in `fm-pivot` directive:
 
 ```bash
-(reportcomplete)="onReportComplete($event)
+(reportcomplete)="onReportComplete()
 ```
 
 Here is the [list of all available API methods and events](https://www.flexmonster.com/api/). 
