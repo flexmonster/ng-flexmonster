@@ -16,6 +16,7 @@ export class FlexmonsterPivot {
   @Input() global: Flexmonster.Report;
   @Input() customizeAPIRequest: (request: Object) => Object;
   @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
+  @Input() customizeChartElement: (element: Element, data: Flexmonster.ChartData | Flexmonster.ChartLegendItemData) => void;
   @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => Flexmonster.ContextMenuItem[];
   // events
   @Output() cellclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
@@ -76,6 +77,7 @@ export class FlexmonsterPivot {
       global: this.global,
       customizeAPIRequest: this.customizeAPIRequest,
       customizeCell: this.customizeCell,
+      customizeChartElement: this.customizeChartElement,
       customizeContextMenu: this.customizeContextMenu,
       cellclick: (cell: Flexmonster.CellData) => this.cellclick.next(cell),
       celldoubleclick: (cell: Flexmonster.CellData) => this.celldoubleclick.next(cell),
