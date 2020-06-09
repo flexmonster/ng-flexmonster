@@ -24,10 +24,7 @@ You have the following options to start:
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
-Node.js and npm are essential to Angular development. 
-    
-<a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
-Get it now</a> if it's not already installed on your machine.
+Node.js and npm are essential to Angular development. [Get it now](https://docs.npmjs.com/getting-started/installing-node) if it's not already installed on your machine.
  
 **Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
 by running `node -v` and `npm -v` in a terminal/console window.
@@ -145,7 +142,7 @@ Here is how all these attributes should be specified:
           [height]="500"
           [licenseKey]="'XXXX-XXXX-XXXX-XXXX-XXXX'"
           [report]="'https://cdn.flexmonster.com/reports/report.json'"
-          (reportcomplete)="onReportComplete($event)">
+          (reportcomplete)="onReportComplete()">
     Flexmonster will appear here
 </fm-pivot>
 ```
@@ -168,7 +165,7 @@ onReportComplete(): void {
 Also, you need to specify that `onReportComplete` handles `reportcomplete` event in `fm-pivot` directive:
 
 ```bash
-(reportcomplete)="onReportComplete($event)
+(reportcomplete)="onReportComplete()
 ```
 
 Here is the [list of all available API methods and events](https://www.flexmonster.com/api/). 
