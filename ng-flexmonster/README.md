@@ -125,7 +125,7 @@ To see the result open your browser on `http://localhost:4200/`.
 
 `fm-pivot` directive embeds the component into the HTML page. Every attribute for `fm-pivot` directive is set either as a string value or as an Angular variable. All attributes are equivalent to those which are passed to the `new Flexmonster()` API call. Check out [the full list of available attributes](https://www.flexmonster.com/api/new-flexmonster/).
 
-Here is how all these attributes should be specified:
+Here is an example demonstrating how different attributes are specified:
 
 ```bash
 <fm-pivot [componentFolder]="'https://cdn.flexmonster.com/'"
