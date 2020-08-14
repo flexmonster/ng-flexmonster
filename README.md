@@ -1,169 +1,25 @@
 # Angular 4+ directive for Flexmonster Pivot Table & Charts
-[![Flexmonster Pivot Table & Charts](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](https://flexmonster.com)
+[![Flexmonster Pivot Table & Charts](https://www.flexmonster.com/fm_uploads/2020/06/GitHub_fm.png)](https://flexmonster.com)
+Website: www.flexmonster.com
 
+## Flexmonster Pivot Table & Charts
+
+Flexmonster Pivot is a powerful JavaScript tool for interactive web reporting. It allows you to visualize and analyze data from JSON, CSV, SQL, NoSQL, Elasticsearch, and OLAP data sources fast and conveniently. Flexmonster is designed to integrate seamlessly with any client-side framework and can be easily embedded into your application.
 
 This repository holds the TypeScript source code for using [Flexmonster Pivot](https://www.flexmonster.com/) in [Angular](https://angular.io/) applications. 
 
-* [Getting started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Integrate Flexmonster into existing/new application](#add-to-app)
-  * [Run simple Angular and Flexmonster sample from GitHub](#run-github-sample)
 * [Usage](#usage)
-  * [fm-pivot directive and its attributes](#fm-pivot-directive)
-  * [Using API calls and events](#using-flexmonster-api)
-  * [Angular Material tabs example](#material-tabs)
+* [Sample project](#sample-project)
 * [License](#license)
 * [Support & feedback](#support-feedback)
 
-## <a name="getting-started"></a>Getting Started ##
-
-You have the following options to start:
-
-* [Integrate Flexmonster into existing/new application](#add-to-app)
-* [Run simple Angular and Flexmonster sample from GitHub](#run-github-sample)
-
-### <a name="prerequisites"></a>Prerequisites ###
-
-Node.js and npm are essential to Angular development. [Get it now](https://docs.npmjs.com/getting-started/installing-node) if it's not already installed on your machine.
- 
-**Verify that you are running at least node `v4.x.x` and npm `3.x.x`**
-by running `node -v` and `npm -v` in a terminal/console window.
-Older versions produce errors.
-
-We recommend [nvm](https://github.com/creationix/nvm) for managing multiple versions of node and npm.
-
-Then install the [Angular CLI](https://cli.angular.io/) globally:
-
-```bash
-npm install -g @angular/cli
-```
-
-### <a name="add-to-app"></a>Integrate Flexmonster into existing/new application ###
-
-**Step 1.** If you don’t have Angular CLI app, you can create it by running in the console:
-
-```bash
-ng new PROJECT-NAME
-cd PROJECT-NAME
-```
-
-**Step 2.** Install Flexmonster Angular module by running the NPM command:
-
-```bash
-npm install ng-flexmonster
-```
-
-**Step 3.** Import `FlexmonsterPivotModule` into `src/app/app.module.ts`:
-
-```typescript
-import { FlexmonsterPivotModule } from 'ng-flexmonster';
-
-@NgModule({
-  ...
-  imports: [FlexmonsterPivotModule],
-  ...
-})
-```
-
-**Step 4.** Import CSS styles (e.g. in the `styles.css`):
-```css
-@import "flexmonster/flexmonster.min.css";
-```
-
-**Step 5.** Import `flexmonster` and `ng-flexmonster` TypeScript modules (e.g. in the `app.component.ts`):
-
-```typescript
-import * as Flexmonster from 'flexmonster';
-import { FlexmonsterPivot } from 'ng-flexmonster';
-```
-
-**Step 6.** Insert `fm-pivot` directive where you need the pivot table (e.g. in the `app.component.html`):
-
-```html
-<fm-pivot 
-  [licenseKey]="'XXXX-XXXX-XXXX-XXXX-XXXX'"
-  [report]="'https://cdn.flexmonster.com/reports/report.json'">
-</fm-pivot>
-```
-
-**Step 7.** Run your application from the console:
-
-```bash
-ng serve
-```
-
-To see the result open your browser on `http://localhost:4200/`.
-
-
-### <a name="run-github-sample"></a>Run simple Angular and Flexmonster sample from GitHub ###
-
-Download `.zip` archive with the sample or [clone it from GitHub](https://github.com/flexmonster/pivot-angular) within the following command:
-
-```bash
-git clone https://github.com/flexmonster/pivot-angular my-proj
-cd my-proj
-```
-
-Install the npm packages described in the `package.json`:
-
-```bash
-npm install
-```
-
-Run your application:
-
-```bash
-ng serve
-```
-
-To see the result open your browser on `http://localhost:4200/`.
-
 ## <a name="usage"></a>Usage ##
 
-### <a name="fm-pivot-directive"></a>fm-pivot directive and its attributes ###
+Refer to [Flexmonster Integration with Angular](https://www.flexmonster.com/doc/integration-with-angular/) tutorial for details on the usage.
 
-`fm-pivot` directive embeds the component into the HTML page. Every attribute for `fm-pivot` directive is set either as a string value or as an Angular variable. All attributes are equivalent to those which are passed to the `new Flexmonster()` API call. Check out [the full list of available attributes](https://www.flexmonster.com/api/new-flexmonster/).
+## <a name="sample-project"></a>Sample Project ##
 
-Here is an example demonstrating how different attributes are specified:
-
-```bash
-<fm-pivot [componentFolder]="'https://cdn.flexmonster.com/'"
-          [toolbar]="true"
-          [width]="'100%'"
-          [height]="500"
-          [licenseKey]="'XXXX-XXXX-XXXX-XXXX-XXXX'"
-          [report]="'https://cdn.flexmonster.com/reports/report.json'"
-          (reportcomplete)="onReportComplete()">
-    Flexmonster will appear here
-</fm-pivot>
-```
-
-### <a name="using-flexmonster-api"></a>Using API calls and events ###
-
-Check out how `setReport()` API method is called when handling `onReportComplete` event in [app.component.ts](https://github.com/flexmonster/pivot-angular/blob/master/src/app/app.component.ts):
-
-```bash
-onReportComplete(): void {
-	this.pivot.flexmonster.off("reportcomplete");
-	this.pivot.flexmonster.setReport({
-		dataSource: {
-			filename: "https://cdn.flexmonster.com/data/data.json"
-		}
-	});
-}
-```
-
-Also, you need to specify that `onReportComplete` handles `reportcomplete` event in `fm-pivot` directive:
-
-```bash
-(reportcomplete)="onReportComplete()
-```
-
-Here is the [list of all available API methods and events](https://www.flexmonster.com/api/). 
-
-### <a name="material-tabs"></a>Angular Material tabs example ###
-
-[This sample on GitHub](https://github.com/flexmonster/pivot-angular/tree/master/src/app/tabs) shows how to add Flexmonster to [Angular Material tabs](https://material.angular.io/components/tabs/overview).
+See our [sample Angular project with Flexmonster](https://github.com/flexmonster/pivot-angular).
 
 ## <a name="license"></a>License ##
 
