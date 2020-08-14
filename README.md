@@ -15,7 +15,7 @@ This repository holds the TypeScript source code for using [Flexmonster Pivot](h
 
 ## <a name="usage"></a>Usage ##
 
-Refer to [Flexmonster Integration with Angular](https://www.flexmonster.com/doc/integration-with-angular/) tutorial for details on the usage.
+Refer to [Flexmonster Integration with Angular](https://www.flexmonster.com/doc/integration-with-angular/) tutorial for details on the directive usage.
 
 ## <a name="sample-project"></a>Sample Project ##
 
