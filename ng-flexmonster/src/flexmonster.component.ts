@@ -9,6 +9,7 @@ export class FlexmonsterPivot {
   // params
   @Input() toolbar: boolean;
   @Input() licenseKey: string;
+  @Input() licenseFilePath: string;
   @Input() width: string | number;
   @Input() height: string | number;
   @Input() componentFolder: string;
@@ -73,6 +74,7 @@ export class FlexmonsterPivot {
       height: this.height,
       toolbar: this.toolbar,
       licenseKey: this.licenseKey,
+      licenseFilePath: this.licenseFilePath,
       report: this.report,
       global: this.global,
       customizeAPIRequest: this.customizeAPIRequest,
