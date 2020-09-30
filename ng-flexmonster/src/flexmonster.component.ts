@@ -52,6 +52,7 @@ export class FlexmonsterPivot {
   @Output() reportfileerror: EventEmitter<Object> = new EventEmitter();
   @Output() reportfileloaded: EventEmitter<Object> = new EventEmitter();
   @Output() runningquery: EventEmitter<Object> = new EventEmitter();
+  @Output() unauthorizederror: EventEmitter<Flexmonster.UnauthorizedErrorHandler> = new EventEmitter();
   @Output() update: EventEmitter<Object> = new EventEmitter();
   @Output() beforetoolbarcreated: EventEmitter<Object> = new EventEmitter();
   @Output() beforegriddraw: EventEmitter<Object> = new EventEmitter();
@@ -112,6 +113,7 @@ export class FlexmonsterPivot {
       reportfilecancelled: () => this.reportfilecancelled.next(),
       reportfileerror: () => this.reportfileerror.next(),
       runningquery: () => this.runningquery.next(),
+      unauthorizederror: (done: Flexmonster.UnauthorizedErrorHandler) => this.unauthorizederror.next(done),
       update: () => this.update.next(),
       beforetoolbarcreated: (toolbar: Object) => this.beforetoolbarcreated.next(toolbar),
       beforegriddraw: (event: Object) => this.beforegriddraw.next(event),
