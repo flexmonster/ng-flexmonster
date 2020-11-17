@@ -32,6 +32,8 @@ export class FlexmonsterPivot {
   @Output() filterclose: EventEmitter<Object> = new EventEmitter();
   @Output() filteropen: EventEmitter<Object> = new EventEmitter();
   @Output() drillthroughopen: EventEmitter<Flexmonster.CellData | Flexmonster.ChartData> = new EventEmitter();
+  @Output() exportcomplete: EventEmitter<Object> = new EventEmitter();
+  @Output() exportstart: EventEmitter<Object> = new EventEmitter();
   @Output() drillthroughclose: EventEmitter<Object> = new EventEmitter();
   @Output() fullscreen: EventEmitter<Object> = new EventEmitter();
   @Output() loadingdata: EventEmitter<Object> = new EventEmitter();
@@ -43,6 +45,8 @@ export class FlexmonsterPivot {
   @Output() olapstructureerror: EventEmitter<Object> = new EventEmitter();
   @Output() olapstructureloaded: EventEmitter<Object> = new EventEmitter();
   @Output() openingreportfile: EventEmitter<Object> = new EventEmitter();
+  @Output() printcomplete: EventEmitter<Object> = new EventEmitter();
+  @Output() printstart: EventEmitter<Object> = new EventEmitter();
   @Output() querycomplete: EventEmitter<Object> = new EventEmitter();
   @Output() queryerror: EventEmitter<Object> = new EventEmitter();
   @Output() ready: EventEmitter<Flexmonster.Pivot> = new EventEmitter();
@@ -92,8 +96,10 @@ export class FlexmonsterPivot {
       fieldslistclose: () => this.fieldslistclose.next(),
       fieldslistopen: () => this.fieldslistopen.next(),
       filterclose: () => this.filterclose.next(),
-      filteropen: () => this.filteropen.next(),
+      filteropen: (event: Object) => this.filteropen.next(event),
       drillthroughopen: (cell: Flexmonster.CellData | Flexmonster.ChartData) => this.drillthroughopen.next(cell),
+      exportcomplete: () => this.exportcomplete.next(),
+      exportstart: () => this.exportstart.next(),
       drillthroughclose: () => this.drillthroughclose.next(),
       loadingdata: () => this.loadingdata.next(),
       loadinglocalization: () => this.loadinglocalization.next(),
@@ -104,6 +110,8 @@ export class FlexmonsterPivot {
       olapstructureerror: () => this.olapstructureerror.next(),
       olapstructureloaded: () => this.olapstructureloaded.next(),
       openingreportfile: () => this.openingreportfile.next(),
+      printcomplete: () => this.printcomplete.next(),
+      printstart: () => this.printstart.next(),
       querycomplete: () => this.querycomplete.next(),
       queryerror: () => this.queryerror.next(),
       ready: () => this.ready.next(this.flexmonster),
