@@ -72,7 +72,7 @@ export class FlexmonsterPivot {
   }
 
   ngOnInit() {
-    this.flexmonster = window['Flexmonster']({
+    this.flexmonster = new Flexmonster({
       container: this.root.getElementsByClassName('fm-ng-wrapper')[0],
       componentFolder: this.componentFolder,
       width: this.width,
