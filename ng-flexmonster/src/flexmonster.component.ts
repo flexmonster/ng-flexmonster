@@ -15,6 +15,7 @@ export class FlexmonsterPivot {
   @Input() componentFolder: string;
   @Input() report: Flexmonster.Report | string;
   @Input() global: Flexmonster.Report;
+  @Input() accessibility: Flexmonster.AccessibilityOptions;
   @Input() customizeAPIRequest: (request: Object) => Object;
   @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
   @Input() customizeChartElement: (element: Element, data: Flexmonster.ChartData | Flexmonster.ChartLegendItemData) => void;
@@ -82,6 +83,7 @@ export class FlexmonsterPivot {
       licenseFilePath: this.licenseFilePath,
       report: this.report,
       global: this.global,
+      accessibility: this.accessibility,
       customizeAPIRequest: this.customizeAPIRequest,
       customizeCell: this.customizeCell,
       customizeChartElement: this.customizeChartElement,
