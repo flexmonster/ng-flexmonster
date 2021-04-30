@@ -3,7 +3,7 @@ import * as Flexmonster from 'flexmonster';
 
 @Component({
   selector: 'fm-pivot',
-  template: '<div class="fm-ng-wrapper"></div>'
+  template: '<div style="width:100%;height:100%;"><div class="fm-ng-wrapper"></div></div>'
 })
 export class FlexmonsterPivot {
   // params
