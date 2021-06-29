@@ -14,7 +14,7 @@ export class FlexmonsterPivot {
   @Input() height: string | number;
   @Input() componentFolder: string;
   @Input() report: Flexmonster.Report | string;
-  @Input() shareReportConnection: Flexmonster.APIClientOptions
+  @Input() shareReportConnection: Flexmonster.APIClientOptions;
   @Input() global: Flexmonster.Report;
   @Input() accessibility: Flexmonster.AccessibilityOptions;
   @Input() customizeAPIRequest: (request: Object) => Object;
@@ -85,6 +85,7 @@ export class FlexmonsterPivot {
       report: this.report,
       global: this.global,
       accessibility: this.accessibility,
+      shareReportConnection: this.shareReportConnection,
       customizeAPIRequest: this.customizeAPIRequest,
       customizeCell: this.customizeCell,
       customizeChartElement: this.customizeChartElement,
