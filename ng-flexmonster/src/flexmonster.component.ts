@@ -60,7 +60,7 @@ export class FlexmonsterPivot {
   @Output() runningquery: EventEmitter<Object> = new EventEmitter();
   @Output() unauthorizederror: EventEmitter<Flexmonster.UnauthorizedErrorHandler> = new EventEmitter();
   @Output() update: EventEmitter<Object> = new EventEmitter();
-  @Output() beforetoolbarcreated: EventEmitter<Object> = new EventEmitter();
+  @Output() beforetoolbarcreated: EventEmitter<Flexmonster.Toolbar> = new EventEmitter();
   @Output() beforegriddraw: EventEmitter<Object> = new EventEmitter();
   @Output() aftergriddraw: EventEmitter<Object> = new EventEmitter();
   @Output() afterchartdraw: EventEmitter<Object> = new EventEmitter();
@@ -127,7 +127,7 @@ export class FlexmonsterPivot {
       runningquery: () => this.runningquery.next(),
       unauthorizederror: (done: Flexmonster.UnauthorizedErrorHandler) => this.unauthorizederror.next(done),
       update: () => this.update.next(),
-      beforetoolbarcreated: (toolbar: Object) => this.beforetoolbarcreated.next(toolbar),
+      beforetoolbarcreated: (toolbar: Flexmonster.Toolbar) => this.beforetoolbarcreated.next(toolbar),
       beforegriddraw: (event: Object) => this.beforegriddraw.next(event),
       aftergriddraw: (event: Object) => this.aftergriddraw.next(event),
       afterchartdraw: () => this.afterchartdraw.next()
