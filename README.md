@@ -29,4 +29,4 @@ Flexmonster Angular directive is released as a MIT-licensed (free and open-sourc
 
 ## <a name="support-feedback"></a>Support & feedback ##
 
-Please share your feedback or ask questions via [Flexmonster Forum](https://www.flexmonster.com/forum/).
+Please share your feedback or ask questions via [Flexmonster Help Center](https://www.flexmonster.com/help-center/).
