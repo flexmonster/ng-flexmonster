@@ -21,6 +21,8 @@ export class FlexmonsterPivot {
   @Input() customizeCell: (cell: Flexmonster.CellBuilder, data: Flexmonster.CellData) => void;
   @Input() customizeChartElement: (element: Element, data: Flexmonster.ChartData | Flexmonster.ChartLegendItemData) => void;
   @Input() customizeContextMenu: (cell: Flexmonster.ContextMenuItem[], data: Flexmonster.CellData | Flexmonster.ChartData, viewType: string) => Flexmonster.ContextMenuItem[];
+  @Input() sortFieldsList: (first: Flexmonster.FieldsListSortingItem, second: Flexmonster.FieldsListSortingItem, fieldsListType: string) => number;
+
   // events
   @Output() cellclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
   @Output() celldoubleclick: EventEmitter<Flexmonster.CellData> = new EventEmitter();
@@ -90,6 +92,7 @@ export class FlexmonsterPivot {
       customizeCell: this.customizeCell,
       customizeChartElement: this.customizeChartElement,
       customizeContextMenu: this.customizeContextMenu,
+      sortFieldsList: this.sortFieldsList,
       cellclick: (cell: Flexmonster.CellData) => this.cellclick.next(cell),
       celldoubleclick: (cell: Flexmonster.CellData) => this.celldoubleclick.next(cell),
       chartclick: (event: Flexmonster.ChartData) => this.chartclick.next(event),
