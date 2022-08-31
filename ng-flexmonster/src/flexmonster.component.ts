@@ -58,7 +58,6 @@ export class FlexmonsterPivot {
   @Output() reportcomplete: EventEmitter<void> = new EventEmitter();
   @Output() reportfilecancelled: EventEmitter<void> = new EventEmitter();
   @Output() reportfileerror: EventEmitter<void> = new EventEmitter();
-  @Output() reportfileloaded: EventEmitter<void> = new EventEmitter();
   @Output() runningquery: EventEmitter<void> = new EventEmitter();
   @Output() unauthorizederror: EventEmitter<Flexmonster.UnauthorizedErrorHandler> = new EventEmitter();
   @Output() update: EventEmitter<void> = new EventEmitter();
@@ -124,7 +123,6 @@ export class FlexmonsterPivot {
       ready: () => this.ready.next(this.flexmonster),
       reportchange: () => this.reportchange.next(),
       reportcomplete: () => this.reportcomplete.next(),
-      reportfileloaded: () => this.reportfileloaded.next(),
       reportfilecancelled: () => this.reportfilecancelled.next(),
       reportfileerror: () => this.reportfileerror.next(),
       runningquery: () => this.runningquery.next(),
