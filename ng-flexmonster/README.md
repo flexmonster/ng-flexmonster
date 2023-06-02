@@ -10,6 +10,8 @@ This package is a [Flexmonster Pivot](https://www.flexmonster.com/) wrapper for 
 
 For newer Angular versions, use the Ivy-compatible [ngx-flexmonster](https://www.npmjs.com/package/ngx-flexmonster). It works with versions 14 and later.
 
+Table of contents:
+
 * [Usage](#usage)
 * [Sample Project](#sample-project)
 * [License](#license)
