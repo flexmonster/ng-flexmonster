@@ -19,7 +19,7 @@ Table of contents:
 
 ## <a name="usage"></a>Usage ##
 
-Refer to [Flexmonster Integration with Angular](https://www.flexmonster.com/doc/integration-with-angular/) for details on the wrapper usage.
+Refer to the [Integration with Angular](https://www.flexmonster.com/doc/integration-with-angular/) guide for details on the wrapper usage.
 
 ## <a name="sample-project"></a>Sample project ##
 
