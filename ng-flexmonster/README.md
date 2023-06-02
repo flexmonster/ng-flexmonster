@@ -13,15 +13,15 @@ For newer Angular versions, use the Ivy-compatible [ngx-flexmonster](https://www
 Table of contents:
 
 * [Usage](#usage)
-* [Sample Project](#sample-project)
+* [Sample project](#sample-project)
 * [License](#license)
-* [Support & feedback](#support-feedback)
+* [Support and feedback](#support-feedback)
 
 ## <a name="usage"></a>Usage ##
 
 Refer to [Flexmonster Integration with Angular](https://www.flexmonster.com/doc/integration-with-angular/) for details on the wrapper usage.
 
-## <a name="sample-project"></a>Sample Project ##
+## <a name="sample-project"></a>Sample project ##
 
 See our [sample Angular project with Flexmonster](https://github.com/flexmonster/pivot-angular/tree/ng-flexmonster).
 
@@ -31,6 +31,6 @@ Here is the [Flexmonster licensing page](https://www.flexmonster.com/pivot-table
 
 Flexmonster Angular wrapper is released as an MIT-licensed (free and open-source) add-on to Flexmonster Pivot.
 
-## <a name="support-feedback"></a>Support & feedback ##
+## <a name="support-feedback"></a>Support and feedback ##
 
 Please share your feedback or ask questions via [Flexmonster Help Center](https://www.flexmonster.com/help-center/).
