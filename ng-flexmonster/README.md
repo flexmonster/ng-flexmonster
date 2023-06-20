@@ -1,4 +1,4 @@
-# Angular 5–Angular 15 wrapper for Flexmonster Pivot Table & Charts
+# Flexmonster Pivot Table & Charts wrapper for Angular 5–Angular 15
 [![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/landing.png)](https://flexmonster.com)
 Website: www.flexmonster.com
 
