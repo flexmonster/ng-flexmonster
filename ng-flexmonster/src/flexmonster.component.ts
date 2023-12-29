@@ -8,7 +8,7 @@ import * as Flexmonster from 'flexmonster';
 export class FlexmonsterPivot implements OnDestroy {
   // params
   @Input() toolbar: boolean;
-  @Input() licenseKey: string;
+  @Input() licenseKey: string | string[];
   @Input() licenseFilePath: string;
   @Input() width: string | number;
   @Input() height: string | number;
