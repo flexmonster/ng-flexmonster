@@ -2,6 +2,7 @@
   "name": "ng-flexmonster",
   "version": "0.0.0",
   "license": "MIT",
+  "description": "Angular 5–Angular 15 wrapper for Flexmonster Pivot Table & Charts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
