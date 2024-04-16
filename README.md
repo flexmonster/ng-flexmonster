@@ -1,5 +1,5 @@
 # Angular pivot table | Flexmonster Pivot Table & Charts wrapper for Angular 5-15
-[![Flexmonster Pivot Table & Charts](https://static.flexmonster.com/uploads/2023/09/07151104/angular.png)](https://www.flexmonster.com?r=wrap_ang)
+[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/readmes/angular.webp)](https://www.flexmonster.com?r=wrap_ang)
 Website: [flexmonster.com](https://www.flexmonster.com?r=wrap_ang)
 
 [![NPM](https://img.shields.io/npm/v/ng-flexmonster)](https://www.npmjs.com/package/ng-flexmonster)
