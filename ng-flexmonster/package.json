@@ -1,6 +1,6 @@
 {
     "name": "ng-flexmonster",
-    "version": "2.9.104",
+    "version": "2.9.105",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -23,7 +23,7 @@
         "@angular/common": ">=4.0.0"
     },
     "dependencies": {
-        "flexmonster": "2.9.104"
+        "flexmonster": "2.9.105"
     },
     "ngPackage": {
         "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
