@@ -52,7 +52,7 @@ To share your feedback or ask questions, contact our Tech team by raising a tick
 
 ## License
 
-Flexmonster Angular wrapper is released as an MIT-licensed (free and open-source) add-on to Flexmonster Pivot.
+The Flexmonster Angular wrapper is released as an MIT-licensed (free and open-source) add-on to Flexmonster Pivot.
 
 To learn about Flexmonster Pivot licenses, visit the [Flexmonster licensing page](https://www.flexmonster.com/pivot-table-editions-and-pricing?r=wrap_ang). 
 If you want to test our product, we provide a 30-day free trial.
