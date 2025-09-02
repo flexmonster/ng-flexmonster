@@ -41,7 +41,7 @@ Explore the available [methods and events](https://www.flexmonster.com/doc/using
 
 If you look for some reference examples, our team prepared a ready-to-use [Angular pivot grid sample project](https://github.com/flexmonster/pivot-angular?r=wrap_ang) with live demos of the most popular use cases. Visit the [Usage examples](https://www.flexmonster.com/doc/usage-examples-angular?r=wrap_ang) page to see how the cases were implemented in an Angular project.
 
-In our documentation, you can find a [guide for the sample Angular application](https://www.flexmonster.com/doc/sample-angular-project?r=wrap_ang). There you can learn how to run it and what's inside.
+In our documentation, you can also find a [guide for the sample Angular application](https://www.flexmonster.com/doc/sample-angular-project?r=wrap_ang). There you can learn how to run it and what's inside.
 
 
 ## Support and feedback
