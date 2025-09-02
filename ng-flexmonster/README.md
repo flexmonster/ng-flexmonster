@@ -35,7 +35,7 @@ This tutorial is also available in video format on our YouTube channel:
 
 ## Usage
 
-The wrapper provides the `FlexmonsterPivot` component to add the pivot table to the Angular project. Read more about the available input properties and how to use them in the [FlexmonsterPivot component documentation](https://www.flexmonster.com/doc/fm-pivot-directive-for-angular?r=wrap_ang).
+The wrapper provides the `FlexmonsterPivot` component to add the pivot table to an Angular project. Read more about the available input properties and how to use them in the [FlexmonsterPivot component documentation](https://www.flexmonster.com/doc/fm-pivot-directive-for-angular?r=wrap_ang).
 
 Explore the available [methods and events](https://www.flexmonster.com/doc/using-methods-and-events-angular?r=wrap_ang) to learn the specifics of using and customizing Flexmonster in an Angular application.
 
