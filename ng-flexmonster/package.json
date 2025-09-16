@@ -1,7 +1,7 @@
 {
     "name": "ng-flexmonster",
     "version": "2.9.112",
-    "license": "MIT",
+    "license": "https://www.flexmonster.com/software-license-agreement/",
     "repository": {
         "type": "git",
         "url": "https://github.com/flexmonster/ng-flexmonster.git"
