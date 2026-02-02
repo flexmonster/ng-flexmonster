@@ -1,6 +1,6 @@
 {
     "name": "ng-flexmonster",
-    "version": "2.9.121-1",
+    "version": "2.9.122",
     "description": "Angular 5-15 wrapper for Flexmonster Pivot Table and Charts",
     "license": "https://www.flexmonster.com/software-license-agreement/",
     "repository": {
@@ -31,7 +31,7 @@
         "@angular/common": ">=4.0.0"
     },
     "dependencies": {
-        "flexmonster": "2.9.121-1"
+        "flexmonster": "2.9.122"
     },
     "ngPackage": {
         "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
